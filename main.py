@@ -1,12 +1,16 @@
 def is_sorted(arr):
-    pos_ant = 1
+    # compare the two first elements to define the sort detected
     if arr[0] < arr[1]:sort = "Ascending"
     else:sort = "Descending"
+    # pointer to the previous position
+    pos_prev = 1
+    # iterate over the array
     for i in range(2,len(arr)):
-        if arr[pos_ant] < arr[i]:new_sort = "Ascending"
+        # compare the two next elements to define the new_sort detected
+        if arr[pos_prev] < arr[i]:new_sort = "Ascending"
         else:new_sort = "Descending"
+        # if change the sort then is not sorted
         if new_sort != sort: return "Not sorted"
-
 
     return sort
 
